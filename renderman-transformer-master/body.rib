@@ -1,0 +1,325 @@
+TransformBegin
+    Scale 0.2 0.05 0.07
+    ReadArchive "unitcube.rib"
+TransformEnd
+
+TransformBegin
+    Translate 0.0 0.025 0.0
+    Rotate 5 1.0 0.0 0.0 #waist_x
+    Rotate 0 0.0 1.0 0.0 #waist_y
+    Rotate 0 0.0 0.0 1.0 #waist_z
+    Translate 0.0 -0.025 0.0
+    
+    #Torso portion
+    TransformBegin
+        TransformBegin
+            Translate 0.0 0.225 0.0
+	    Color [1 0 0]
+            Scale 0.2 0.4 0.15
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate 0.0 0.225 -0.0725
+	    Surface "transparent"
+	    Color [1 1 1]
+            Scale 0.14 0.34 0.01
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate 0.0 0.325 0.0725
+	    Surface "transparent"
+	    Color [1 1 1]
+            Scale 0.18 0.15 0.01
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate 0.0 0.200 0.0725
+	    Surface "metal" #\m/
+            Scale 0.15 0.04 0.01
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate 0.0 0.160 0.0725
+            Scale 0.15 0.01 0.01
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate 0.0 0.140 0.0725
+            Scale 0.15 0.01 0.01
+            ReadArchive "unitcube.rib"
+        TransformEnd            
+        TransformBegin
+            Translate 0.05 0.075 0.0725
+            Scale 0.06 0.05 0.01
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate -0.05 0.075 0.0725
+            Scale 0.06 0.05 0.01
+            ReadArchive "unitcube.rib"
+	    Surface "diffsurf"
+	    Color [0 0 1]
+        TransformEnd
+    TransformEnd
+
+    #Head
+    TransformBegin
+        Translate 0.0 0.425 0.0
+        Rotate -5 1.0 0.0 0.0 #neck_x
+        Rotate 0 0.0 1.0 0.0 #neck_y
+        Rotate 0 0.0 0.0 1.0 #neck_z
+        Translate 0.0 -0.425 0.0
+        TransformBegin
+            Translate 0.0 0.475 0.0
+            Scale 0.1 0.1 0.05
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate 0.0 0.515 0.0
+	    Surface "metal"
+	    Color [1 1 1]
+            Scale 0.11 0.010 0.06
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate 0.025 0.480 0.025
+            Scale 0.025 0.020 0.005
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate -0.025 0.480 0.025
+            Scale 0.025 0.020 0.005
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        TransformBegin
+            Translate 0.0 0.440 0.025
+            Scale 0.09 0.04 0.005
+            ReadArchive "unitcube.rib"
+	    Surface "diffsurf"
+        TransformEnd
+    TransformEnd
+
+    
+    #The right arm
+    TransformBegin
+	Color [1 0 0]
+        Translate -0.1 0.0 0.0
+        Rotate 0 0.0 1.0 0.0 #rs_joint_x
+        Translate 0.1 0.0 0.0
+        TransformBegin
+            Translate -0.115 0.375 0.0
+            Scale 0.03 0.05 0.03
+            ReadArchive "unitcube.rib"
+        TransformEnd
+	TransformBegin
+	    Color [1 1 1]
+	    Translate -0.1 0.375 0.0
+	    Rotate 90 1 0 0
+	    Cylinder  0.005 0.350 0.4 360
+	    Color [1 0 0]
+	TransformEnd
+        #Move pivot back
+        Translate -0.13 0.375 0.0
+        #Shoulder Y rotation
+        Rotate 0 0.0 1.0 0.0 #right_shoulder_y
+        #Shoulder Z rotation
+        Rotate 0 0.0 0.0 1.0 #right_shoulder_z
+        #Shoulder X rotation
+        Rotate 30 1.0 0.0 0.0 #right_shoulder_x
+            #Get pivot to origin
+        Translate 0.13 -0.375 0.0
+
+        TransformBegin
+            Translate -0.16 0.275 0.0
+            Scale 0.08 0.3 0.08
+            ReadArchive "unitcube.rib"
+        TransformEnd
+
+        #Forearm
+        TransformBegin
+            #Move pivot back
+            Translate 0.0 0 0.0 #elbows_y_offset
+            Translate -0.13 0.125 0.0
+            #Rotate Elbow Joint
+            Rotate -90 1.0 0.0 0.0 #right_elbow_x
+            #Move pivot up
+            Translate 0.13 -0.125 0.0
+
+            TransformBegin
+                Translate -0.16 -0.025 0.0
+                Scale 0.06 0.3 0.06
+                ReadArchive "unitcube.rib"
+            TransformEnd
+
+            Translate -0.16 -0.175 0.0
+            Rotate -50 1.0 0.0 0.0 #right_wrist_x
+            Rotate 0 0.0 0.0 1.0 #right_wrist_z
+            Translate 0.16 0.175 0.0
+
+            #Wrist
+            TransformBegin
+                Translate -0.16 -0.2 0.0
+                Scale 0.07 0.05 0.07
+	        Color [0 0 1]
+                ReadArchive "unitcube.rib"
+		#Rotate 90 1 0 0
+            TransformEnd
+            #Wrist Ends
+        TransformEnd
+        #Forearm Ends
+    TransformEnd
+    #The right arm ends 
+
+    #The left arm
+    TransformBegin
+	Color [1 0 0]
+        Translate 0.1 0.0 0.0
+        Rotate 0 0.0 1.0 0.0 #ls_joint_x
+        Translate -0.1 0.0 0.0
+        TransformBegin
+            Translate 0.115 0.375 0.0
+            Scale 0.03 0.05 0.03
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        #Move pivot back
+        Translate 0.13 0.375 0.0
+        #Shoulder Y rotation
+        Rotate 0 0.0 1.0 0.0 #left_shoulder_y
+        #Shoulder Z rotation
+        Rotate 0 0.0 0.0 1.0 #left_shoulder_z
+        #Shoulder X rotation
+        Rotate -30 1.0 0.0 0.0 #left_shoulder_x
+        #Get pivot to origin
+        Translate -0.13 -0.375 0.0
+
+        TransformBegin
+            Translate 0.16 0.275 0.0
+            Scale 0.08 0.3 0.08
+            ReadArchive "unitcube.rib"
+        TransformEnd
+
+        #Forearm
+        TransformBegin
+            #Move pivot back
+            Translate 0.0 0 0.0 #elbows_y_offset
+            Translate 0.13 0.125 0.0
+            #Rotate Elbow Joint
+            Rotate -90 1.0 0.0 0.0 #left_elbow_x
+            #Move pivot up
+            Translate -0.13 -0.125 0.0
+
+            TransformBegin
+                Translate 0.16 -0.025 0.0
+                Scale 0.06 0.3 0.06
+                ReadArchive "unitcube.rib"
+            TransformEnd
+
+            Translate 0.16 -0.175 0.0
+            Rotate 50 1.0 0.0 0.0 #left_wrist_x
+            Rotate 0 0.0 0.0 1.0 #left_wrist_z
+            Translate -0.16 0.175 0.0
+
+            #Wrist
+            TransformBegin
+                Translate 0.16 -0.2 0.0
+                Scale 0.07 0.05 0.07
+	    	Color [0 0 1]
+                ReadArchive "unitcube.rib"
+            TransformEnd
+            #Wrist Ends
+        TransformEnd
+        #Forearm Ends
+    TransformEnd
+    #The left arm ends 
+
+TransformEnd
+
+#The right leg begins
+TransformBegin
+    Translate -0.06 -0.025 0.0
+    Rotate 0 1.0 0.0 0.0 #right_hip_x
+    Rotate 0 0.0 1.0 0.0 #right_hip_y
+    Rotate 0 0.0 0.0 1.0 #right_hip_z
+    Translate 0.06 0.025 0.0
+
+    TransformBegin
+        TransformBegin
+            Translate -0.06 -0.185 0.0
+            Scale 0.08 0.32 0.12
+	    Color [1 1 1]
+            ReadArchive "unitcube.rib"
+        TransformEnd
+    TransformEnd
+
+    #Leg below knees
+    TransformBegin
+        Translate 0.06 -0.345 0.0
+        Rotate 0 1.0 0.0 0.0 #right_knee_x
+        Translate -0.06 0.345 0.0
+
+        TransformBegin
+            Translate -0.06 -0.465 0.0
+            Scale 0.08 0.24 0.08
+	    Color [0 0 1]
+            ReadArchive "unitcube.rib"
+        TransformEnd
+
+        #Ankle
+        TransformBegin
+            Translate -0.06 -0.585 -0.0125
+            Rotate 0 1.0 0.0 0.0 #right_ankle_x
+            Rotate 0 0.0 1.0 0.0 #right_ankle_y
+            Translate 0.06 0.585 0.0125
+            Translate -0.06 -0.595 0.0475
+            Scale 0.08 0.04 0.12
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        #Ankle Ends
+    TransformEnd
+    #Leg below knees ends
+TransformEnd
+#The right leg ends
+
+#The left leg begins
+TransformBegin
+    Translate 0.06 -0.025 0.0
+    Rotate 0 1.0 0.0 0.0 #left_hip_x
+    Rotate 0 0.0 1.0 0.0 #left_hip_y
+    Rotate 0 0.0 0.0 1.0 #left_hip_z
+    Translate -0.06 0.025 0.0
+
+    TransformBegin
+        Translate 0.06 -0.185 0.0
+        Scale 0.08 0.32 0.12
+        Color [1 1 1]
+        ReadArchive "unitcube.rib"
+    TransformEnd
+
+    #Leg below knees
+    TransformBegin
+        Translate 0.06 -0.345 0.0
+        Rotate 0 1.0 0.0 0.0 #left_knee_x
+        Translate -0.06 0.345 0.0
+
+        TransformBegin
+            Translate 0.06 -0.465 0.0
+            Scale 0.08 0.24 0.08
+	    Color [0 0 1]
+            ReadArchive "unitcube.rib"
+        TransformEnd
+
+        #Ankle
+        TransformBegin
+            Translate 0.06 -0.585 -0.0125
+            Rotate 0 1.0 0.0 0.0 #left_ankle_x
+            Rotate 0 0.0 1.0 0.0 #left_ankle_y
+            Translate -0.06 0.585 0.0125
+            Translate 0.06 -0.595 0.0475
+            Scale 0.08 0.04 0.12
+            ReadArchive "unitcube.rib"
+        TransformEnd
+        #Ankle Ends
+    TransformEnd
+    #Leg below knees ends
+TransformEnd
+#The left leg ends

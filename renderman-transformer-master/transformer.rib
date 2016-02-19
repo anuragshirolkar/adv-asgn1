@@ -1,0 +1,217 @@
+#Anurag Shirolkar
+
+
+# Main Robot Body
+AttributeBegin
+	TransformBegin
+		Translate 0 1.15 0
+		TransformBegin
+			Color [0.16 0.3 0.8]
+			Scale 0.5 0.4 0.5
+			ReadArchive "cube.rib"
+			Color [1 1 1]
+		TransformEnd
+		TransformBegin
+			Translate 0 -0.25 0
+			Scale 0.2 0.1 0.2
+			ReadArchive "cube.rib"
+		TransformEnd
+	TransformEnd
+	TransformBegin
+		Translate 0 0.55 0
+		TransformBegin
+			Scale 1 0.5 0.5
+			Color [0.7 0.13 0.13]
+			ReadArchive "cube.rib"
+			Color [1 1 1]
+		TransformEnd
+		TransformBegin
+			Translate -0.225 0 -0.25
+			Scale 0.4 0.3 0.05
+			ReadArchive "cube.rib"
+			TransformBegin
+				Translate 0 -0.4 0
+				Scale 0.9 0.1 1.1
+				Color [0.7 0.13 0.13]
+				ReadArchive "cube.rib"
+				Color [1 1 1]
+			TransformEnd
+		TransformEnd
+		TransformBegin
+			Translate 0.225 0 -0.25
+			Scale 0.4 0.3 0.05
+			ReadArchive "cube.rib"
+			TransformBegin
+				Translate 0 -0.4 0
+				Scale 0.9 0.1 1.1
+				Color [0.7 0.13 0.13]
+				ReadArchive "cube.rib"
+				Color [1 1 1]
+			TransformEnd
+		TransformEnd
+	TransformEnd
+	TransformBegin
+		Translate 0 0.15 0
+		TransformBegin
+			Scale 0.8 0.3 0.4
+			ReadArchive "cube.rib"
+		TransformEnd
+		TransformBegin
+			Color [0.8 0.8 0.8]
+			Scale 0.3 0.3 0.5
+			ReadArchive "cube.rib"
+		TransformEnd
+	TransformEnd
+	TransformBegin
+		Translate 0 -0.1 0
+		TransformBegin
+			Scale 1 0.2 0.45
+			Color [0.5 0.5 0.5]
+			ReadArchive "cube.rib"
+		TransformEnd
+		Color [0.8 0.8 0.8]
+		TransformBegin
+			Scale 0.3 0.2 0.5
+			ReadArchive "cube.rib"
+		TransformEnd
+	TransformEnd
+
+	# left hand
+	TransformBegin
+		Translate 0.65 0.65 0
+		Rotate -10 1 0 0
+		TransformBegin
+			Scale 0.3 0.3 0.3
+			Color [0.7 0.13 0.13]
+			ReadArchive "cube.rib"
+			Color [1 1 1]
+		TransformEnd
+		TransformBegin
+			Translate 0 -0.25 0
+			Scale 0.2 0.2 0.2
+			ReadArchive "cube.rib"
+		TransformEnd
+		TransformBegin
+			Translate 0 -0.45 0
+			Rotate 30 1 0 0
+			TransformBegin
+				Translate 0 -0.15 0
+				Scale 0.3 0.5 0.3
+				Color [0.7 0.13 0.13]
+				ReadArchive "cube.rib"
+				Color [1 1 1]
+			TransformEnd
+			TransformBegin
+				Translate 0.05 -0.5 0
+				Scale 0.2 0.2 0.2
+				Color [0.16 0.3 0.8]
+				ReadArchive "cube.rib"
+				TransformBegin
+					Translate -0.375 0.125 -0.625
+					Scale 0.25 0.75 0.25
+					ReadArchive "cube.rib"
+				TransformEnd
+				Color [1 1 1]
+			TransformEnd
+		TransformEnd
+		
+	TransformEnd
+
+	# right hand
+	TransformBegin
+		Translate -0.65 0.65 0
+		Rotate 45 1 0 0
+		TransformBegin
+			Scale 0.3 0.3 0.3
+			Color [0.7 0.13 0.13]
+			ReadArchive "cube.rib"
+			Color [1 1 1]
+		TransformEnd
+		TransformBegin
+			Translate 0 -0.25 0
+			Scale 0.2 0.2 0.2
+			ReadArchive "cube.rib"
+		TransformEnd
+		TransformBegin
+			Translate 0 -0.45 0
+			Rotate 20 1 0 0
+			TransformBegin
+				Translate 0 -0.15 0
+				Scale 0.3 0.5 0.3
+				Color [0.7 0.13 0.13]
+				ReadArchive "cube.rib"
+				Color [1 1 1]
+			TransformEnd
+			TransformBegin
+				Translate -0.05 -0.5 0
+				Scale 0.2 0.2 0.2
+				Color [0.16 0.3 0.8]
+				ReadArchive "cube.rib"
+				TransformBegin
+					Translate 0.375 0.125 -0.625
+					Scale 0.25 0.75 0.25
+					ReadArchive "cube.rib"
+				TransformEnd
+				Color [1 1 1]
+			TransformEnd
+		TransformEnd
+		
+	TransformEnd
+
+	# left leg
+	TransformBegin
+		Translate 0.25 -0.25 0
+		TransformBegin
+			Translate 0 -0.3 0
+			Scale 0.4 0.7 0.4
+			ReadArchive "cube.rib"
+		TransformEnd
+		TransformBegin
+			Color [0.16 0.3 0.8]
+			Translate 0 -0.7 -0.05
+			TransformBegin
+				Translate 0 -0.3 0
+				Scale 0.45 0.7 0.45
+				ReadArchive "cube.rib"
+			TransformEnd
+			TransformBegin
+				Translate 0 -0.7 -0.075
+				Scale 0.45 0.2 0.6
+				ReadArchive "cube.rib"
+			TransformEnd
+			Color [1 1 1]
+		TransformEnd
+	TransformEnd
+
+	# right leg
+	TransformBegin
+		Translate -0.25 -0.25 0
+		TransformBegin
+			Translate 0 -0.3 0
+			Scale 0.4 0.7 0.4
+			ReadArchive "cube.rib"
+		TransformEnd
+		TransformBegin
+			Color [0.16 0.3 0.8]
+			Translate 0 -0.7 -0.05
+			TransformBegin
+				Translate 0 -0.3 0
+				Scale 0.45 0.7 0.45
+				ReadArchive "cube.rib"
+			TransformEnd
+			TransformBegin
+				Translate 0 -0.7 -0.075
+				Scale 0.45 0.2 0.6
+				ReadArchive "cube.rib"
+			TransformEnd
+			Color [1 1 1]
+		TransformEnd
+	TransformEnd
+
+
+
+
+	
+AttributeEnd
+
+	

@@ -1,0 +1,23 @@
+TransformBegin
+# far face
+Polygon "P" [.5 .5 .5  -.5 .5 .5  -.5 -.5 .5  .5 -.5 .5]
+Rotate 90  0 1 0
+# right face
+Polygon "P" [.5 .5 .5  -.5 .5 .5  -.5 -.5 .5  .5 -.5 .5]
+# near face
+Rotate 90  0 1 0
+Polygon "P" [.5 .5 .5  -.5 .5 .5  -.5 -.5 .5  .5 -.5 .5]
+# left face
+Rotate 90  0 1 0
+Polygon "P" [.5 .5 .5  -.5 .5 .5  -.5 -.5 .5  .5 -.5 .5]
+TransformEnd
+TransformBegin
+# bottom face
+Rotate 90  1 0 0
+Polygon "P" [.5 .5 .5  -.5 .5 .5  -.5 -.5 .5  .5 -.5 .5]
+TransformEnd
+TransformBegin
+# top face
+Rotate -90  1 0 0
+Polygon "P" [.5 .5 .5  -.5 .5 .5  -.5 -.5 .5  .5 -.5 .5]
+TransformEnd
