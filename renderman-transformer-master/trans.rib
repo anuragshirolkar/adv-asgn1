@@ -38,16 +38,16 @@ WorldBegin
 	Polygon "P" [-4 0 -4 -4 8 -4 -4 8 4 -4 0 4 ] "st" [0 0 0 1 1 1 1 0] #Left
 #	Polygon "P" [4 8 -4 -4 8 -4 -4 0 -4 4 0 -4] "st" [0 0 0 1 1 1 1 0] #Front
 	TransformBegin
-		Translate 0 0.2 0
-		Color [1 1 1]
 		Surface "metal"
+		Translate 0 .2 -.8
+		Color [1 1 1]
 		Sphere 0.2 -0.2 0.2 360
 	TransformEnd
 
 	TransformBegin
-		Translate 1 0.2 -0.8
 		Color [1 1 1]
 		Surface "transparent"
+		Translate 0.5 0 0
 		Scale 2 2 2
 		ReadArchive "prism.rib"
 	TransformEnd
@@ -55,11 +55,15 @@ WorldBegin
 	TransformBegin
 		Color [1 1 1]
 		Surface "diffsurf"
-		Translate 3 1.25 2
+		Translate 3 1.65 2
 		Rotate 15 0 1 0
-		Scale 0.3 0.3 0.3
-		Scale 2 2 2 
 		ReadArchive "transformer.rib"
 	TransformEnd
 
+	TransformBegin
+		Color[1 1 1]
+		Surface "diffsurf"
+		Translate -2 0.5 0
+		ReadArchive "r2d2.rib"
+	TransformEnd
 WorldEnd

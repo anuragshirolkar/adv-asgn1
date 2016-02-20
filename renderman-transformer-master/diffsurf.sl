@@ -18,7 +18,7 @@ diffsurf
 
 
   Ci += Cs * 1.5 * local_illumination;
-  Ci += 1 * indirectdiffuse(P, Nn, 1000);
+  Ci += .75 * indirectdiffuse(P, Nn, 1000);
   Ci += Kc * photonmap("caus.cpm", P, N, "estimator", 400);
   Oi = Os;
 }

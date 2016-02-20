@@ -19,7 +19,7 @@ texsurf
 
 
   Ci += Cs * 0.75 * local_illumination;
-  Ci += 4.5 * indirectdiffuse(P, Nn, 1000);
+  Ci += 1 * indirectdiffuse(P, Nn, 1000);
   Ci += Kc * photonmap("caus.cpm", P, N, "estimator", 400);
   color t = texture(tex);
   float r = Ci[0] * t[0];
