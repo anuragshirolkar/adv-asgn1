@@ -1,27 +1,26 @@
-num_x = 20
-num_y = 2
-num_z = 20
-start_x = 2
-start_y = 1
-start_z = 2
-step_x = 0.015
-step_y = 0.015
-step_z = 0.015
-intensity = 0.0125
-count = 1
-text1 = "LightSource \"shadowlight\" "
-text2 = " \"intensity\" "+str(intensity)+" \"lightcolor\" [1 1 1] \"from\" ["
+minX = 2
+maxX = 2.5
+minZ = 2
+maxZ = 2.5
+y = 2
 
-x = start_x
-for i in xrange(num_x):
-	y = start_y
-	for j in xrange(num_y):
-		z = start_z
-		for k in xrange(num_z):
-			print text1+str(count)+text2+str(x)+" "+str(y)+" "+str(z)+"]"
-			count += 1
-			z += step_z
-		y += step_y
-	x += step_x
+stepX = 0.02
+stepZ = 0.02
+
+intensity = 0.01
+
+x = minX
 
 
+count = 0
+
+f = open("arealight.rib","w")
+
+while x<=maxX:
+	z = minZ
+	while z<=maxZ:
+		f.write("LightSource \"shadowlight\" "+str(count)+" \"intensity\" " +str(intensity)+ " \"lightcolor\" [1 1 1] \"from\" ["+str(x)+" "+str(y)+" "+str(z)+"]\n")		
+		z = z+stepZ
+		count = count+1
+
+	x=x+stepX
