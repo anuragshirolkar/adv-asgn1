@@ -53,7 +53,7 @@ WorldBegin
 	TransformEnd
 
 	TransformBegin
-		Color [0 0 1]
+		Color [1 1 1]
 		Surface "diffsurf"
 		Translate 3 1.25 2
 		Rotate 15 0 1 0
@@ -61,4 +61,5 @@ WorldBegin
 		Scale 2 2 2 
 		ReadArchive "transformer.rib"
 	TransformEnd
+
 WorldEnd
