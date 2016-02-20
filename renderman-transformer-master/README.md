@@ -48,7 +48,7 @@ We use the following shaders in this assignment:
 * transparentSurface.sl -  (Surface Shader) - This is similar to metal shader but along it smaller reflection component it has high refraction component
 
 ### Textures
-* wood.tex - wooden texture used on surface
+* floor.tex - wooden texture used on surface
 * r2d2.tex - texture on body of r2d2
 
 
