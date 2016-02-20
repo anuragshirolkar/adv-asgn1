@@ -11,6 +11,7 @@ HTML Report: http://anuragshirolkar.github.io/adv-asgn1/
 
 ##Dependencies
 Renderman Pro Server 20
+
 python 2.\*
 
 ##How to run
@@ -61,7 +62,7 @@ We use the following shaders in this assignment:
 
 ##Credits
 * Wooden texture - google images 
-* r2d2 body texture - PhotoBucket.com - ttp://s228.photobucket.com/user/freezen2001/media/r2d2bodycropped.jpg.html
+* r2d2 body texture - PhotoBucket.com - http://s228.photobucket.com/user/freezen2001/media/r2d2bodycropped.jpg.html
 * The RenderMan Docs
 * Ranveer Aggarwal for guide on arealights and caustics
 
