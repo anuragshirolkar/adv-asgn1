@@ -6,7 +6,7 @@
 FrameBegin 1
 Hider "photon" "emit" 1000000
 
-#Display "transform" "framebuffer" "rgba"
+Display "transform" "framebuffer" "rgba"
 Attribute "visibility" "int diffuse" 1
 Attribute "visibility" "int specular" 1
 Attribute "visibility" "int transmission" 1
@@ -46,6 +46,7 @@ WorldBegin
 	Attribute "photon" "shadingmodel" "water"
 		Translate 0.5 0 0
 		Scale 2 2 2
+		Rotate -20 0 1 0
 		ReadArchive "prism.rib"
 	AttributeEnd
 	TransformEnd
@@ -54,7 +55,7 @@ WorldBegin
 	AttributeBegin
 	Attribute "photon" "shadingmodel" "matte"
 		Color [1 1 1]
-		Surface "diffsurf"
+		Surface "diffusedSurface"
 		Translate 3 1.65 2
 		Rotate 15 0 1 0
 		ReadArchive "transformer.rib"
@@ -65,9 +66,18 @@ WorldBegin
 	AttributeBegin
 	Attribute "photon" "shadingmodel" "matte"
 		Color[1 1 1]
-		Surface "diffsurf"
-		Translate -2 0.5 0
+		Surface "diffusedSurface"
+		Translate -2 0.5 0.5
 		ReadArchive "r2d2.rib"
+	AttributeEnd
+	TransformEnd
+
+	TransformBegin
+	AttributeBegin
+	Attribute "photon" "shadingmodel" "water"
+		Translate -2 0.2 -1
+		Color [1 1 1]
+		Sphere 0.2 -0.2 0.2 360
 	AttributeEnd
 	TransformEnd
 WorldEnd

@@ -10,7 +10,7 @@ AttributeBegin
 		Color 0.8 0.8 0.8
 		Cylinder 0.60 0.0 1.0 360
 		Color 1 1 1
-		Surface  "diffsurf"
+		Surface  "diffusedSurface"
 		Translate 0 0 -1.0
 		Disk 1.0 0.6 360
 	TransformEnd

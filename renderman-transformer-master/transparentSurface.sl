@@ -1,5 +1,5 @@
 surface
-transparent
+transparentSurface
 (
     float Ka=.1,
           Ks=.1,
@@ -7,7 +7,7 @@ transparent
           Kr=.1,
           Kt=.9,
           roughness=.1,
-          eta=0.95;
+          eta=0.7;
     color specularcolor=1
 )
 {

@@ -20,14 +20,14 @@ TransformBegin
         TransformEnd
         TransformBegin
             Translate 0.0 0.225 -0.0725
-	    Surface "transparent"
+	    Surface "transparentSurface"
 	    Color [1 1 1]
             Scale 0.14 0.34 0.01
             ReadArchive "unitcube.rib"
         TransformEnd
         TransformBegin
             Translate 0.0 0.325 0.0725
-	    Surface "transparent"
+	    Surface "transparentSurface"
 	    Color [1 1 1]
             Scale 0.18 0.15 0.01
             ReadArchive "unitcube.rib"
@@ -57,7 +57,7 @@ TransformBegin
             Translate -0.05 0.075 0.0725
             Scale 0.06 0.05 0.01
             ReadArchive "unitcube.rib"
-	    Surface "diffsurf"
+	    Surface "diffusedSurface"
 	    Color [0 0 1]
         TransformEnd
     TransformEnd
@@ -95,7 +95,7 @@ TransformBegin
             Translate 0.0 0.440 0.025
             Scale 0.09 0.04 0.005
             ReadArchive "unitcube.rib"
-	    Surface "diffsurf"
+	    Surface "diffusedSurface"
         TransformEnd
     TransformEnd
 

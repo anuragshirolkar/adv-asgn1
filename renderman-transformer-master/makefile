@@ -1,17 +1,17 @@
 shader=/opt/pixar/RenderManProServer-20.7/bin/shader
 prman=/opt/pixar/RenderManProServer-20.7/bin/prman -progress 
-all: trans.rib caus.cpm body.rib arealight.rib diffsurf.slo metal.slo transparent.slo texsurf.slo shadowlight.slo r2d2body.slo
+all: caus.cpm trans.rib body.rib arealight.rib diffusedSurface.slo metal.slo transparentSurface.slo textureSurface.slo shadowlight.slo r2d2body.slo
 	${prman} trans.rib
 arealight.rib: genarealight.py
 	python genarealight.py > arealight.rib
-diffsurf.slo: diffsurf.sl
-	${shader} diffsurf.sl
-texsurf.slo: texsurf.sl
-	${shader} texsurf.sl
+diffusedSurface.slo: diffusedSurface.sl
+	${shader} diffusedSurface.sl
+textureSurface.slo: textureSurface.sl
+	${shader} textureSurface.sl
 metal.slo: metal.sl
 	${shader} metal.sl
-transparent.slo: transparent.sl
-	${shader} transparent.sl
+transparentSurface.slo: transparentSurface.sl
+	${shader} transparentSurface.sl
 shadowlight.slo: shadowlight.sl
 	${shader} shadowlight.sl
 r2d2body.slo: r2d2body.sl
