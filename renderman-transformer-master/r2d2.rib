@@ -1,0 +1,61 @@
+#Prateek Chandan
+
+
+AttributeBegin
+	Rotate 270 1 0 0
+
+	#Body
+	TransformBegin
+		Surface  "r2d2body"
+		Color 0.8 0.8 0.8
+		Cylinder 0.60 0.0 1.0 360
+		Color 1 1 1
+		Surface  "plastic"
+		Translate 0 0 -1.0
+		Disk 1.0 0.6 360
+	TransformEnd
+
+	#head
+	TransformBegin
+		Translate 0 0 1.05
+		Sphere 0.60 0 0.6 360
+	TransformEnd
+
+
+
+	#lowerleg
+	TransformBegin
+		Translate 0 0 -0.2
+		Scale 0.2 0.2 0.4
+		ReadArchive "cube.rib"
+
+	TransformEnd
+
+	#lowerfeet
+	TransformBegin
+		Translate 0 0 -0.4
+		Scale 0.4 0.4 0.4
+		Rotate 270 1 0 0
+		Rotate 90 0 1 0
+		ReadArchive "feet.rib"
+	TransformEnd
+
+	TransformBegin
+		Translate 0.7 0 0
+		Rotate 90 1 0 0
+		Rotate 90 0 1 0
+		ReadArchive "arm.rib"
+	TransformEnd
+
+	TransformBegin
+		Translate -0.7 0 0
+		Rotate 90 1 0 0
+		Rotate 270 0 1 0
+		#Rotate 180 0 0 1
+		ReadArchive "arm.rib"
+	TransformEnd
+	
+	#left Arm
+AttributeEnd
+
+	

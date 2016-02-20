@@ -1,0 +1,50 @@
+#Prateek Chandan
+
+
+AttributeBegin
+	#Body
+	TransformBegin
+		Translate 0 1 0
+		Cylinder 0.4 0.0 0.2 360
+		Translate 0 0 -1.0
+		Disk 1.0 0.4 360
+		Translate 0 0 0.2
+		Disk 1.0 0.4 360
+	TransformEnd
+
+	TransformBegin
+		#Surface  "metal"
+		Translate 0 1 -0.1
+		Cylinder 0.1 0.0 0.1 360
+		Translate 0 0 -1.0
+		Disk 1.0 0.1 360
+		Translate 0 0 0.2
+		Disk 1.0 0.1 360
+	TransformEnd
+
+	TransformBegin
+		Color 0.2 0.2 0.9
+		Translate 0 0.3 0.1
+		Scale 0.6 1 0.18
+		ReadArchive "cube.rib"
+	TransformEnd
+
+	TransformBegin
+		Color 1 1 1
+		Translate 0 -0.3 0.1
+		Scale 0.2 0.2 0.2
+		ReadArchive "cube.rib"
+	TransformEnd
+
+	TransformBegin
+		Translate 0 -0.5 0.1
+		Scale 0.3 0.4 0.3
+		Rotate 180 0 0 1
+		ReadArchive "feet.rib"
+	TransformEnd
+
+
+	
+AttributeEnd
+
+	
