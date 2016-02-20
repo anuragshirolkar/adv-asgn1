@@ -20,7 +20,7 @@ r2d2body
 
   Ci += Cs * 0.3 * local_illumination;
   Ci += 4.5 * indirectdiffuse(P, Nn, 1000);
-  Ci += Kc * photonmap("caus.cpm", P, N, "estimator", 400);
+  Ci += Kc * photonmap("caustics.cpm", P, N, "estimator", 400);
 
   color t = texture(tex);
   float r = Ci[0] * t[0];

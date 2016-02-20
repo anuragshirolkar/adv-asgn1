@@ -5,7 +5,7 @@ textureSurface
           Kd=3,
           Kr=.5,
           Kt=.5,
-          Kc=.5,
+          Kc=1,
           eta=1.5;
     string tex="floor.tex";
 )
@@ -19,8 +19,8 @@ textureSurface
 
 
   Ci += Cs * 0.75 * local_illumination;
-  Ci += 1 * indirectdiffuse(P, Nn, 1000);
-  Ci += Kc * photonmap("caus.cpm", P, N, "estimator", 400);
+  Ci += .75 * indirectdiffuse(P, Nn, 1000);
+  Ci += Kc * photonmap("caustics.cpm", P, N, "estimator", 400);
   color t = texture(tex);
   float r = Ci[0] * t[0];
   float g = Ci[1] * t[1];

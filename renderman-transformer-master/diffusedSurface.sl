@@ -19,6 +19,6 @@ diffusedSurface
 
   Ci += Cs * 1.5 * local_illumination;
   Ci += .75 * indirectdiffuse(P, Nn, 1000);
-  Ci += Kc * photonmap("caus.cpm", P, N, "estimator", 400);
+  Ci += Kc * photonmap("caustics.cpm", P, N, "estimator", 400);
   Oi = Os;
 }
