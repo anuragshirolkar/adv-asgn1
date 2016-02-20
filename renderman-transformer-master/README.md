@@ -1,5 +1,8 @@
+#CS775 - Advanced Graphics
 Rendering of Star Wars Droid Scene Using Pixar's Renderman
+
 Prateek Chandan (120050042)
+
 Anurag Shirolkar (120050003)
 
 ===

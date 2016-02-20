@@ -1,6 +1,6 @@
-shader=/opt/pixar/RenderManProServer-20.7/bin/shader
-prman=/opt/pixar/RenderManProServer-20.7/bin/prman -progress 
-all: scene.rib body.rib arealight.rib diffusedSurface.slo metal.slo transparentSurface.slo textureSurface.slo shadowlight.slo r2d2body.slo caustics.cpm 
+shader=/opt/pixar/RenderManProServer-20.6/bin/shader
+prman=/opt/pixar/RenderManProServer-20.6/bin/prman -progress 
+all: scene.rib arealight.rib diffusedSurface.slo metal.slo transparentSurface.slo textureSurface.slo shadowlight.slo r2d2body.slo caustics.cpm 
 	${prman} scene.rib
 arealight.rib: light.py
 	python light.py
