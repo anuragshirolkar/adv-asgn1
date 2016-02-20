@@ -1,0 +1,13 @@
+Color [1 1 1]
+Polygon "P" [-4 8 4 -4 8 -4 4 8 -4 4 8 4 ] "st" [0 0 0 1 1 1 1 0] #Up
+Color [1 1 1]
+Polygon "P" [-4 0 4 -4 8 4 4 8 4 4 0 4] "st" [0 0 0 1 1 1 1 0] #Back
+Surface "textureSurface"
+Color [0.8 0.8 0.8]
+Color [1 1 1]
+Polygon "P" [-4 0 -4 -4 0 4 4 0 4 4 0 -4] "st" [0 0 0 1 1 1 1 0] #Floor
+Surface "diffusedSurface"
+Color [0 1 0]
+Polygon "P" [4 0 4 4 8 4 4 8 -4 4 0 -4] "st" [0 0 0 1 1 1 1 0] #Right
+Color [1 0 0]
+Polygon "P" [-4 0 -4 -4 8 -4 -4 8 4 -4 0 4 ] "st" [0 0 0 1 1 1 1 0] #Left
