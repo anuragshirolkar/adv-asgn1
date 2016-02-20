@@ -1,48 +1,64 @@
-Global Illumination with Renderman
-Ranveer Aggarwal (120050020)
-Abhinav Gupta (120050029)
+Rendering of Star Wars Droid Scene Using Pixar's Renderman
+Prateek Chandan (120050042)
+Anurag Shirolkar (120050003)
 
 ===
 
-##Introduction
-We generate a scene with a few objects and a transformer developed previously, in renderman.
-Then we experiment with various Global Illumination phenomena like Color Bleeding, caustics, soft and hard shadows etc.
-
-HTML Report: http://ranveeraggarwal.com/graphics/global-illumination-renderman
+HTML Report: http://anuragshirolkar.github.io/adv-asgn1/
 
 ##Dependencies
-Renderman Pro Server 19
+Renderman Pro Server 20
 python 2.\*
 
 ##How to run
+Open make file and edit variables prman and shader to the correct binaries
+
 Execute make by 
 
 	make
 
-in this directory to generate the file `display-transformer.tif`. This is the final rendered file containing the scene.
 
-##File structure
-The main code begins from trans.rib. Then we use separate files to generate the transformer (body.rib), the are lights (arealights.rib), the caustics and of course the shaders.
+##Output Images
+The images are rendered in the folder "rendered" with names scene-c0.tif , scene-c2.tif.. scene-c4.tif
 
-##Shaders
+##Description of Files
 We use the following shaders in this assignment:
-* shadowlight: This is a light source shader which causes local illumination at a point only when the poing is unoccluded by any other object.
-* diffusedSurface: This is a surface shader with local illumination, indirect lighting and caustics (From a cuastic map).
-* textureSurface: This is a surface shader much like diffused, except, the illumination is used as a weight for a color obtained from a texture map
-* metal: This is a surface shader which has a high specular component and high reflectivity. The shader calls the trace function to raytrace the reflection.
-* transparent: This is a surface shader with very low local illumination and reflection. Most of the light is refracted and raytraced.
+### Rib Files
+* scene.rib - Main file which contains the whole scene and camera placements
+* transformer.rib - Contains description of transformer
+* r2d2.rib - Contains description of R2D2
+* arm.rib - contains description of arm of R2D2
+* cube.rib - Unit Cube used at multiple places
+* envbox.rib - Rib file which contains the planes of the environment box
+* feet.rib - Contains description of the feet of r2d2
+* prism.rib - contains prism description
+* caustics.rib - Photon map to create caustics
+* arealight.rib - Collection of pointlights
+
+### Shaders
+* diffusedSurface.sl - (Surface Shader) - This contains illumination due to the local illumination , indirect illumination (used for color bleeding) and illumination due to photon mapping
+* metal.sl - (Surface Shader) - This shader is used to create illumination due to mettalic surface , it is used in path tracing for multiple depth. It has only reflected component
+* shadowlight.sl - (Light Shader) - it generates illumination and also see if light is reachable to create shadows
+* textureSurface.sl - (Surface Shader) - Similar to diffusedSurface with little less localillumination and mainly used to map the wooden texture on the floor
+* r2d2body.sl - (Surface Shader) - Similar to diffusedSurface  used to map the body of R2D2
+* transparentSurface.sl -  (Surface Shader) - This is similar to metal shader but along it smaller reflection component it has high refraction component
+
+### Textures
+* wood.tex - wooden texture used on surface
+* r2d2.tex - texture on body of r2d2
+
+
 
 ##Effects
-The following required effects were achieved in the assignment:
-* Color Bleeding: Using indirect illumination in the diffused and texture shaders.
-* Area Lights and Soft Shadows: Placing multiple point lights closely.
-* Texture Mapping: Using the texture function in texture shader.
-* Caustics: Photon mapping the scene to generate a caustic map and then adding it to the illumination.
-* Transparent and Metallic Surfaces: Using the transparent and metal shaders respectively.
+* Indirect Illumination(Color bleeding) - achieved by diffused surface , mainly seen on wall and body od bots
+* area light and soft shadow - collection of point lights created the soft shadows 
+* textures
+* Used a metallic ball and transparent ball
+* used a transparent prism to get the image of bot on prism by refraction
 
 ##Credits
-* Pixar!
+* Wooden texture - google images 
+* r2d2 body texture - PhotoBucket.com - ttp://s228.photobucket.com/user/freezen2001/media/r2d2bodycropped.jpg.html
 * The RenderMan Docs
-* Rohan Prinja
+* Ranveer Aggarwal for guide on arealights and caustics
 
-Note: No plagiarism in the assignment. No extra days were used for the assignment.
