@@ -1,40 +1,110 @@
-
 <html>
-	<head>
-		<title>CS775 Assignment 1</title>
-		<link rel="stylesheet" type="text/css" href="./index.css">
-		<link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
-
-	</head>
-	
-	<body>
-		
-		<div id="container">
-			<div class="main-container">
-				<div id="header" style="">
-					<p style="font-size:200%;">CS775 Assignment 1</p>
-				</div>
-				<div>
-					<h3>Team Members</h3>
-					<a href="http://www.cse.iitb.ac.in/~prateekchandan">Prateek Chandan (120050042)</a><br>
-					<a href="http://www.cse.iitb.ac.in/~anuragshirolkar">Anurag Shirolkar (120050003)</a>
-				</div>
-				<h3>Rendering of Star Wars Droid Scene Using Pixar's Renderman</h3>
-				<p>
-					
-				</p>
-
-				<div id="screenshots">
-					<h2>Screenshots</h2>
-					
-
-					</div>
-				</div>
-			</div>
-		</div>
-			
-	</body>
-
-
-	
+   <head>
+      <title>CS775 Assignment 1</title>
+      <link rel="stylesheet" type="text/css" href="./index.css">
+      <link rel="stylesheet" type="text/css" href="./bootstrap.min.css">
+   </head>
+   <body>
+      <div id="container">
+         <div class="main-container">
+            <div id="header" style="">
+               <p style="font-size:200%;">CS775 Assignment 1</p>
+            </div>
+            <div>
+               <h3>Team Members</h3>
+               <a href="http://www.cse.iitb.ac.in/~prateekchandan">Prateek Chandan (120050042)</a><br>
+               <a href="http://www.cse.iitb.ac.in/~anuragshirolkar">Anurag Shirolkar (120050003)</a>
+            </div>
+            <h3>Rendering of Star Wars Droid Scene Using Pixar's Renderman</h3>
+            <p>
+            </p>
+            <article class="markdown-body entry-content" itemprop="text">
+              
+               <h2><a id="user-content-dependencies" class="anchor" href="#dependencies" aria-hidden="true"></a>Dependencies</h2>
+               <p>Renderman Pro Server 20</p>
+               <p>python 2.*</p>
+               <h2><a id="user-content-how-to-run" class="anchor" href="#how-to-run" aria-hidden="true"></a>How to run</h2>
+               <p>Open make file and edit variables prman and shader to the correct binaries</p>
+               <p>Execute make by </p>
+               <pre><code>make
+</code></pre>
+               <h2><a id="user-content-output-images" class="anchor" href="#output-images" aria-hidden="true"></a>Output Images</h2>
+               <p>The images are rendered in the folder "rendered" with names scene-c0.tif , scene-c2.tif.. scene-c4.tif</p>
+               <h2><a id="user-content-description-of-files" class="anchor" href="#description-of-files" aria-hidden="true"></a>Description of Files</h2>
+               <p>We use the following shaders in this assignment:</p>
+               <h3><a id="user-content-rib-files" class="anchor" href="#rib-files" aria-hidden="true"></a>Rib Files</h3>
+               <ul>
+                  <li>scene.rib - Main file which contains the whole scene and camera placements</li>
+                  <li>transformer.rib - Contains description of transformer</li>
+                  <li>r2d2.rib - Contains description of R2D2</li>
+                  <li>arm.rib - contains description of arm of R2D2</li>
+                  <li>cube.rib - Unit Cube used at multiple places</li>
+                  <li>envbox.rib - Rib file which contains the planes of the environment box</li>
+                  <li>feet.rib - Contains description of the feet of r2d2</li>
+                  <li>prism.rib - contains prism description</li>
+                  <li>caustics.rib - Photon map to create caustics</li>
+                  <li>arealight.rib - Collection of pointlights</li>
+               </ul>
+               <h3><a id="user-content-shaders" class="anchor" href="#shaders" aria-hidden="true"></a>Shaders</h3>
+               <ul>
+                  <li>diffusedSurface.sl - (Surface Shader) - This contains illumination due to the local illumination , indirect illumination (used for color bleeding) and illumination due to photon mapping</li>
+                  <li>metal.sl - (Surface Shader) - This shader is used to create illumination due to mettalic surface , it is used in path tracing for multiple depth. It has only reflected component</li>
+                  <li>shadowlight.sl - (Light Shader) - it generates illumination and also see if light is reachable to create shadows</li>
+                  <li>textureSurface.sl - (Surface Shader) - Similar to diffusedSurface with little less localillumination and mainly used to map the wooden texture on the floor</li>
+                  <li>r2d2body.sl - (Surface Shader) - Similar to diffusedSurface  used to map the body of R2D2</li>
+                  <li>transparentSurface.sl -  (Surface Shader) - This is similar to metal shader but along it smaller reflection component it has high refraction component</li>
+               </ul>
+               <h3><a id="user-content-textures" class="anchor" href="#textures" aria-hidden="true"></a>Textures</h3>
+               <ul>
+                  <li>floor.tex - wooden texture used on surface</li>
+                  <li>r2d2.tex - texture on body of r2d2</li>
+               </ul>
+               <h2><a id="user-content-effects" class="anchor" href="#effects" aria-hidden="true"></a>Effects</h2>
+               <ul>
+                  <li>Indirect Illumination(Color bleeding) - achieved by diffused surface , mainly seen on wall and body od bots</li>
+                  <li>area light and soft shadow - collection of point lights created the soft shadows </li>
+                  <li>textures</li>
+                  <li>Used a metallic ball and transparent ball</li>
+                  <li>used a transparent prism to get the image of bot on prism by refraction</li>
+               </ul>
+               <h2><a id="user-content-credits" class="anchor" href="#credits" aria-hidden="true"></a>Credits</h2>
+               <ul>
+                  <li>Wooden texture - google images </li>
+                  <li>r2d2 body texture - PhotoBucket.com - <a href="http://s228.photobucket.com/user/freezen2001/media/r2d2bodycropped.jpg.html">http://s228.photobucket.com/user/freezen2001/media/r2d2bodycropped.jpg.html</a></li>
+                  <li>The RenderMan Docs</li>
+                  <li>Ranveer Aggarwal for guide on arealights and caustics</li>
+               </ul>
+            </article>
+            <div id="screenshots">
+               <h2>Screenshots</h2>
+               <div class="row">
+               		<img src="img/scene-c0.jpg" style="width:90%;margin-left:5%">
+               		<br>
+               		<b>1</b>
+               </div>
+               <div class="row">
+               		<img src="img/scene-c1.jpg" style="width:90%;margin-left:5%">
+               		<br>
+               		<b>2</b>
+               </div>
+               <div class="row">
+               		<img src="img/scene-c2.jpg" style="width:90%;margin-left:5%">
+               		<br>
+               		<b>3</b>
+               </div>
+               <div class="row">
+               		<img src="img/scene-c3.jpg" style="width:90%;margin-left:5%">
+               		<br>
+               		<b>4</b>
+               </div>
+               <div class="row">
+               		<img src="img/scene-c4.jpg" style="width:90%;margin-left:5%">
+               		<br>
+               		<b>5</b>
+               </div>
+            </div>
+         </div>
+      </div>
+      </div>
+   </body>
 </html>
